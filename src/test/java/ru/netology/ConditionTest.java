@@ -9,15 +9,13 @@ class ConditionTest {
     @Test
     void increaseCurrentTemperature() {
         Condition condition = new Condition();
-        int expected = 21;
-        assertEquals(expected, condition.getCurrentTemperature());
+        condition.increaseCurrentTemperature();
     }
 
 
     @Test
     void decreaseCurrentTemperature() {
         Condition condition = new Condition();
-        int expected = 19;
-        assertEquals(expected, condition.getCurrentTemperature());
+        condition.decreaseCurrentTemperature();
     }
 }

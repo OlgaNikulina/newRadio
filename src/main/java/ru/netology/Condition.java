@@ -2,9 +2,9 @@ package ru.netology;
 
 public class Condition {
     private String name;
-    private int maxTemperature;
-    private int minTemperature;
-    private int currentTemperature;
+    private int maxTemperature = 33;
+    private int minTemperature = 18;
+    private int currentTemperature = 22;
     private boolean on;
 
     public String getName() {
@@ -40,24 +40,18 @@ public class Condition {
     }
 
 
-    public void IncreaseCurrentTemperature() {
-        if ((currentTemperature + 1) >= maxTemperature) {
+    public void increaseCurrentTemperature() {
+        if (currentTemperature == maxTemperature) {
             return;
         }
-        if ((currentTemperature + 1) <= minTemperature) {
-            return;
-        }
-        this.currentTemperature = currentTemperature;
+        currentTemperature += 1;
     }
 
-    public void DecreaseCurrentTemperature() {
-        if ((currentTemperature - 1) >= maxTemperature) {
+    public void decreaseCurrentTemperature() {
+        if (currentTemperature == maxTemperature) {
             return;
         }
-        if ((currentTemperature - 1) <= minTemperature) {
-            return;
-        }
-        this.currentTemperature = currentTemperature;
+        currentTemperature -= 1;
     }
 }
 
