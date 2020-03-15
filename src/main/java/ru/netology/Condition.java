@@ -7,51 +7,20 @@ public class Condition {
     private int currentTemperature = 22;
     private boolean on;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getMaxTemperature() {
-        return maxTemperature;
-    }
-
-    public void setMaxTemperature(int maxTemperature) {
-        this.maxTemperature = maxTemperature;
-    }
-
-    public int getMinTemperature() {
-        return minTemperature;
-    }
-
-    public void setMinTemperature(int minTemperature) {
-        this.minTemperature = minTemperature;
-    }
-
-    public int getCurrentTemperature() {
+    public int increaseCurrentTemperature() {
+        if (currentTemperature == maxTemperature) {
+            return 0;
+        }
+        currentTemperature += 1;
         return currentTemperature;
     }
 
-    public void setCurrentTemperature(int currentTemperature) {
-        this.currentTemperature = currentTemperature;
-    }
-
-
-    public void increaseCurrentTemperature() {
-        if (currentTemperature == maxTemperature) {
-            return;
-        }
-        currentTemperature += 1;
-    }
-
-    public void decreaseCurrentTemperature() {
-        if (currentTemperature == maxTemperature) {
-            return;
+    public int decreaseCurrentTemperature() {
+        if (currentTemperature == minTemperature) {
+            return 0;
         }
         currentTemperature -= 1;
+        return currentTemperature;
     }
 }
 
