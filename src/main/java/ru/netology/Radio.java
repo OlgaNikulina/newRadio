@@ -1,33 +1,30 @@
 package ru.netology;
 
 public class Radio {
-    int currentStation = 5;
-    int maxStation = 9;
-    int minStation = 0;
-    int currentVolume = 5;
-    int maxVolume = 10;
-    int minVolume = 1;
-    boolean on;
-    String next;
-    String previous;
+    private int currentStation = 5;
+    private int maxStation = 9;
+    private int minStation = 0;
+    private int currentVolume = 5;
+    private int maxVolume = 10;
+    private int minVolume = 1;
+    private boolean on;
 
     public Radio(int currentStation) {
         this.currentStation = currentStation;
     }
 
 
-
     public int getCurrentStation() {
-        if (currentStation == maxStation) {
-            return minStation;
-        }
-        if (currentStation == minStation) {
-            return maxStation;
-        }
         return currentStation;
     }
 
     public void setCurrentStation(int currentStation) {
+        if (currentStation == maxStation) {
+            return;
+        }
+        if (currentStation == minStation) {
+            return;
+        }
         this.currentStation = currentStation;
     }
 
@@ -47,17 +44,19 @@ public class Radio {
         this.minStation = minStation;
     }
 
+
+
     public int getCurrentVolume() {
-        if (currentVolume == maxVolume) {
-            return minVolume;
-        }
-        if (currentVolume == minVolume) {
-            return maxVolume;
-        }
         return currentVolume;
     }
 
     public void setCurrentVolume(int currentVolume) {
+        if (currentVolume == maxVolume) {
+            return;
+        }
+        if (currentVolume == minVolume) {
+            return;
+        }
         this.currentVolume = currentVolume;
     }
 
@@ -85,50 +84,32 @@ public class Radio {
         this.on = on;
     }
 
-    public String getNext() {
-        return next;
+    public void nextStation() {
+        if (currentStation >= maxStation) {
+            currentStation = minStation;
+        }
+        currentStation ++;
     }
 
-    public void setNext(String next) {
-        this.next = next;
+    public void prevStation() {
+        if (currentStation <= minStation) {
+            currentStation = maxStation;
+        }
+        currentStation --;
     }
 
-    public String getPrevious() {
-        return previous;
+    public void increaseVolume() {
+        if (currentVolume >= maxVolume) {
+            return;
+        }
+        currentVolume += 1;
     }
 
-    public void setPrevious(String previous) {
-        this.previous = previous;
-    }
-
-    public void setStation() {
-        if (currentStation == maxStation) {
+    public void decreaseVolume() {
+        if (currentVolume <= minVolume) {
+            return;
         }
-
-        if (currentStation == minStation) {
-        }
-
-        currentStation++;
-    }
-
-    public void setVolume() {
-        if (currentVolume == maxVolume) {
-        }
-        if (currentVolume == minVolume) {
-        }
-        currentVolume++;
-    }
-
-    public void nextStation () {
-        if (currentStation == maxStation) {
-        }
-        currentStation += 1;
-            }
-
-    public void prevStation () {
-        if (currentStation == minStation) {
-        }
-        currentStation -= 1;
+        currentVolume -= 1;
     }
 }
 
