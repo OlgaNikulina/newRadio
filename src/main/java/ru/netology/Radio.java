@@ -9,10 +9,10 @@ public class Radio {
     private int minVolume = 1;
     private boolean on;
 
-    public Radio(int currentStation) {
+    public Radio(int currentStation, int currentVolume) {
         this.currentStation = currentStation;
+        this.currentVolume = currentVolume;
     }
-
 
     public int getCurrentStation() {
         return currentStation;
