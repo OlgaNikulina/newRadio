@@ -23,6 +23,14 @@ class RadioTest {
     }
 
     @Test
+    void setCurrentVolume2() {
+        Radio radio = new Radio(1, 1);
+        radio.setCurrentVolume(1);
+        int actual = radio.getCurrentVolume();
+        assertEquals(1, actual);
+    }
+
+    @Test
     void nextStation() {
         Radio radio = new Radio(9, 5);
         radio.nextStation();

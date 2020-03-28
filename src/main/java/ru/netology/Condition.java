@@ -7,7 +7,11 @@ public class Condition {
     private int currentTemperature = 22;
     private boolean on;
 
+    public Condition() {
+    }
+
     public Condition(int currentTemperature) {
+
         this.currentTemperature = currentTemperature;
     }
 
@@ -23,16 +27,8 @@ public class Condition {
         return maxTemperature;
     }
 
-    public void setMaxTemperature(int maxTemperature) {
-        this.maxTemperature = maxTemperature;
-    }
-
     public int getMinTemperature() {
         return minTemperature;
-    }
-
-    public void setMinTemperature(int minTemperature) {
-        this.minTemperature = minTemperature;
     }
 
     public int getCurrentTemperature() {
