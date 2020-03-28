@@ -15,6 +15,11 @@ public class Condition {
         this.currentTemperature = currentTemperature;
     }
 
+    public Condition(int maxTemperature, int minTemperature) {
+        this.maxTemperature = maxTemperature;
+        this.minTemperature = minTemperature;
+    }
+
     public String getName() {
         return name;
     }
