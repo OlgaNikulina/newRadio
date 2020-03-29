@@ -12,7 +12,11 @@ public class Radio {
     public Radio() {
     }
 
+flexible
     public Radio(int currentStation, int maxStation, int currentVolume) {
+
+    public Radio(int currentStation, int currentVolume) {
+ master
         this.currentStation = currentStation;
         this.maxStation = maxStation;
         this.currentVolume = currentVolume;
@@ -58,16 +62,8 @@ public class Radio {
         return maxVolume;
     }
 
-    public void setMaxVolume(int maxVolume) {
-        this.maxVolume = maxVolume;
-    }
-
     public int getMinVolume() {
         return minVolume;
-    }
-
-    public void setMinVolume(int minVolume) {
-        this.minVolume = minVolume;
     }
 
     public boolean isOn() {
@@ -83,7 +79,7 @@ public class Radio {
             currentStation = minStation;
             return;
         }
-        currentStation ++;
+        currentStation++;
     }
 
     public void prevStation() {
@@ -91,7 +87,7 @@ public class Radio {
             currentStation = maxStation;
             return;
         }
-        currentStation --;
+        currentStation--;
     }
 
     public void increaseVolume() {
