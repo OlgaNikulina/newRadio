@@ -17,18 +17,6 @@ class ConditionTest {
     }
 
     @Test
- flexible
-    void shouldIncreaseCurrentTemperature() {
-        Condition condition = new Condition(25 );
-        int expected = 26;
-        condition.increaseCurrentTemperature();
-        int actual = condition.getCurrentTemperature();
-        assertEquals(expected, actual);
-    }
-
-    @Test
-
- master
     void shouldNotIncreaseCurrentTemperature() {
         Condition condition = new Condition(33 );
         int expected = 33;
@@ -39,13 +27,8 @@ class ConditionTest {
 
     @Test
     void shouldDecreaseCurrentTemperature() {
- flexible
-        Condition condition = new Condition(20);
-        int expected = 19;
-
         Condition condition = new Condition(21);
         int expected = 20;
-> master
         condition.decreaseCurrentTemperature();
         int actual = condition.getCurrentTemperature();
         assertEquals(expected, actual);
