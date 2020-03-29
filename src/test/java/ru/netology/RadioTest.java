@@ -16,18 +16,18 @@ class RadioTest {
 
     @Test
     void shouldNotSetOverMaxStation() {
-        Radio radio = new Radio(10, 5);
+        Radio radio = new Radio(9, 5);
         radio.setCurrentStation(10);
         int actual = radio.getCurrentStation();
-        assertEquals(10, actual);
+        assertEquals(9, actual);
     }
 
     @Test
     void shouldNotSetUnderMinStation() {
-        Radio radio = new Radio(-1, 5);
+        Radio radio = new Radio(0, 5);
         radio.setCurrentStation(-1);
         int actual = radio.getCurrentStation();
-        assertEquals(-1, actual);
+        assertEquals(0, actual);
     }
 
     @Test
@@ -40,18 +40,18 @@ class RadioTest {
 
     @Test
     void shouldNotSetOverMaxVolume() {
-        Radio radio = new Radio(1, 11);
+        Radio radio = new Radio(1, 10);
         radio.setCurrentVolume(11);
         int actual = radio.getCurrentVolume();
-        assertEquals(11, actual);
+        assertEquals(10, actual);
     }
 
     @Test
     void shouldNotSetUnderMinVolume() {
-        Radio radio = new Radio(1, 0);
+        Radio radio = new Radio(1, 1);
         radio.setCurrentVolume(0);
         int actual = radio.getCurrentVolume();
-        assertEquals(0, actual);
+        assertEquals(1, actual);
     }
 
     @Test
